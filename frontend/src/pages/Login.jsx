@@ -13,12 +13,28 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
+        try {
+            const response = await axios.post(
+                "http://127.0.0.1:4000/api/v1/user/login",
+                {email,password,confirmPassword,role: "Patient"},
+                {
+                    withCredentials: true,
+                    Headers:{"Content-Type": "application/json"}
+                }
+            );
+            toast.success(response.data.message);
+            setIsAuthenticated(true);
+            navigateto("/");
+        } catch (error) {
+            toast.success(error.response.data.message);
+        }
     }
 
     if (isAuthenticated) {
         return <Navigate to={"/"} />
     }
     return (
+        <>
         <div className='container form-component login-form'>
             <h2>Sign In</h2>
             <p>Please Login to Continue</p>
@@ -36,6 +52,7 @@ const Login = () => {
                 </div>
             </form>
         </div>
+        </>
     )
 }
 
