@@ -40,6 +40,21 @@ export const getAllAppointment = catchAsyncErros(async (req, res, next) => {
     });
 });
 
+export const getUserAppointments = catchAsyncErros(async (req, res, next) => {
+    const firstName = req.user.firstName;
+    const lastName = req.user.lastName
+    const appointments = await Appointment.find({
+        $and: [
+            { firstName: firstName },
+            { lastName: lastName }
+        ]
+    });
+    res.status(200).json({
+        success: true,
+        appointments
+    });
+});
+
 
 export const updateAppointmentStatus = catchAsyncErros(async (req, res, next) => {
     const { id } = req.params;
