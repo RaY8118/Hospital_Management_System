@@ -41,7 +41,7 @@ body {
     width: 100%;
   }
 }
-.form-title{
+.form-title {
   font-size: 1.75rem;
   color: #111;
   margin-bottom: 30px;
@@ -248,15 +248,15 @@ body {
   width: 100%;
   font-weight: 600;
 }
-.dashboard table td svg{
+.dashboard table td svg {
   display: flex;
   margin: 0 auto;
 }
-.dashboard table td .green{
+.dashboard table td .green {
   font-size: 20px;
   color: #16a34a;
 }
-.dashboard table td .red{
+.dashboard table td .red {
   font-size: 20px;
   color: #dc2626;
 }
@@ -512,6 +512,7 @@ body {
 }
 .add-doctor-form form .first-wrapper div:first-child {
   flex: 1;
+  flex-direction: column;
 }
 .add-doctor-form form .first-wrapper div:first-child img {
   width: 100%;
