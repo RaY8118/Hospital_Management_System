@@ -7,10 +7,13 @@ import Aboutus from "./pages/Aboutus";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
+import Diseases from "./pages/Diseases.jsx";
+import Footer from "./components/Footer.jsx"
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Context } from "./main.jsx";
 import axios from "axios";
+import { UserApp } from "./pages/UserApp.jsx";
 
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
@@ -40,8 +43,11 @@ const App = () => {
           <Route path="/about" element={<Aboutus />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/disease" element={<Diseases />} />
+          <Route path="/userapp" element={<UserApp />} />
         </Routes>
         <ToastContainer position="top-center" />
+        <Footer />
       </Router>
     </>
   );
