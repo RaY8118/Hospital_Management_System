@@ -29,8 +29,8 @@ const userSchema = new mongoose.Schema({
     ano: {
         type: String,
         required: true,
-        minLength: [12, "Aadhar number should be of 10 digits!!"],
-        maxLength: [12, "Aadhar number should be of 10 digits!!"]
+        minLength: [12, "Aadhar number should be of 12 digits!!"],
+        maxLength: [12, "Aadhar number should be of 12 digits!!"]
     },
     dob: {
         type: Date,

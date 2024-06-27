@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Context } from "./main.jsx";
 import axios from "axios";
 import { UserApp } from "./pages/UserApp.jsx";
+import Pres from "./pages/Pres.jsx";
 
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/disease" element={<Diseases />} />
           <Route path="/userapp" element={<UserApp />} />
+          <Route path="/prescriptions" element={<Pres />} />
         </Routes>
         <ToastContainer position="top-center" />
         <Footer />

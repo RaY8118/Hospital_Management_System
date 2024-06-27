@@ -4,7 +4,7 @@ import { TiHome } from "react-icons/ti";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { AiFillMessage } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaUserDoctor } from "react-icons/fa6";
+import { FaUserDoctor, FaReceipt } from "react-icons/fa6";
 import { IoPersonAddSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom"
 import axios from "axios";
@@ -34,6 +34,10 @@ const Sidebar = () => {
         navigateTo("/doctor/addnew");
         setShow(!show)
     }
+    const goToPres = () => {
+        navigateTo("/pres");
+        setShow(!show)
+    }
 
     const handleLogout = async () => {
         await axios
@@ -57,6 +61,7 @@ const Sidebar = () => {
                     <TiHome onClick={goToHome} />
                     <FaUserDoctor onClick={goToDoctorsPage} />
                     <IoPersonAddSharp onClick={goToAddNewDoctor} />
+                    <FaReceipt onClick={goToPres} />
                     <AiFillMessage onClick={goToMessagePage} />
                     <RiLogoutBoxFill onClick={handleLogout} />
                 </div>

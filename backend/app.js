@@ -9,6 +9,7 @@ import { errorMiddleware } from "./middlewares/errorMiddleware.js"
 import userRouter from "./router/userRouter.js";
 import appointmentRouter from "./router/appointmentRouter.js";
 import diseaseRouter from "./router/diseaseRouter.js"
+import presRouter from "./router/presRouter.js"
 
 const app = express();
 config({ path: "./config/config.env" })
@@ -32,6 +33,7 @@ app.use("/api/v1/message", messageRouter)
 app.use("/api/v1/user", userRouter)
 app.use("/api/v1/appointment", appointmentRouter)
 app.use("/api/v1/disease", diseaseRouter)
+app.use("/api/v1/pres", presRouter)
 
 dbConnection();
 app.use(errorMiddleware);

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../main";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -42,6 +42,7 @@ export const UserApp = () => {
                                 <th>Doctor</th>
                                 <th>Department</th>
                                 <th>Status</th>
+                                <th>Prescriptions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,14 +59,16 @@ export const UserApp = () => {
                                                     appointment.status === "Pending"
                                                         ? "value-pending"
                                                         : appointment.status === "Accepted"
-                                                            ? "value-accepted"
-                                                            : "value-rejected"
+                                                            ? "value-accepted" : appointment.status === "Done"
+                                                                ? "value-accepted"
+                                                                : "value-rejected"
                                                 }
                                             >
                                                 {appointment.status}
                                             </div>
 
                                         </td>
+                                        <td><Link to={"/prescriptions"}>Click here to see ur prescriptions</Link></td>
                                     </tr>
                                 ))
                                 : "No Appointments Found!"}

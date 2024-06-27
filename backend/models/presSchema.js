@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
-import validator from "validator";
 
 
-const appointmentSchema = new mongoose.Schema({
+const presSchema = new mongoose.Schema({
     firstName: {
         type: String,
         required: true,
@@ -13,11 +12,6 @@ const appointmentSchema = new mongoose.Schema({
         required: true,
         minLength: [3, "Last name should be at least 3 characters!!"]
     },
-    email: {
-        type: String,
-        required: true,
-        validate: [validator.isEmail, "Please provide a valid email"]
-    },
     phone: {
         type: String,
         required: true,
@@ -27,8 +21,8 @@ const appointmentSchema = new mongoose.Schema({
     ano: {
         type: String,
         required: true,
-        minLength: [12, "Aadhar number should be of 12 digits!!"],
-        maxLength: [12, "Aadhar number should be of 12 digits!!"]
+        minLength: [12, "Aadhar number should be of 10 digits!!"],
+        maxLength: [12, "Aadhar number should be of 10 digits!!"]
     },
     dob: {
         type: Date,
@@ -57,10 +51,6 @@ const appointmentSchema = new mongoose.Schema({
             required: true
         }
     },
-    hasVisited: {
-        type: Boolean,
-        default: false
-    },
     doctorId: {
         type: mongoose.Schema.ObjectId,
         required: true
@@ -77,8 +67,30 @@ const appointmentSchema = new mongoose.Schema({
         type: String,
         enum: ["Pending", "Accepted", "Rejected", "Done"],
         default: "Pending"
+    },
+    disease: {
+        type: String,
+        required: true
+    },
+    bp: {
+        type: String,
+        required: true
+    },
+    weight: {
+        type: String,
+        required: true
+    },
+    meds: {
+        type: String,
+        required: true
+    },
+    days: {
+        type: String,
+        required: true
     }
+
+
 });
 
 
-export const Appointment = mongoose.model("Appointment", appointmentSchema)
+export const Pres = mongoose.model("Prescription", presSchema)
