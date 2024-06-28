@@ -6,12 +6,12 @@ import Login from "./components/Login";
 import Doctors from "./components/Doctors";
 import Messages from "./components/Messages";
 import Sidebar from "./components/Sidebar";
-import PresForm from "./components/Pres"
+import PresForm from "./components/Pres";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Context } from "./main";
-import axios from "axios"
-import "./App.css"
+import axios from "axios";
+import "./App.css";
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, user, setUser } =
     useContext(Context);

@@ -72,9 +72,8 @@ const AppointmentForm = () => {
         }
       );
       toast.success(data.message);
-      navigateTo("/")
-      console.log(data)
-
+      navigateTo("/");
+      console.log(data);
     } catch (error) {
       toast.error(error.response.data.message);
     }
