@@ -8,13 +8,13 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Diseases from "./pages/Diseases.jsx";
-import Footer from "./components/Footer.jsx"
+import Footer from "./components/Footer.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Context } from "./main.jsx";
 import axios from "axios";
-import { UserApp } from "./pages/UserApp.jsx";
-import Pres from "./pages/Pres.jsx";
+import UserAppoinments from "./pages/UserAppoinments.jsx";
+import Prescription from "./pages/Prescription.jsx";
 
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
@@ -45,8 +45,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/disease" element={<Diseases />} />
-          <Route path="/userapp" element={<UserApp />} />
-          <Route path="/prescriptions" element={<Pres />} />
+          <Route path="/userapp" element={<UserAppoinments />} />
+          <Route path="/prescriptions/:date" element={<Prescription />} />
         </Routes>
         <ToastContainer position="top-center" />
         <Footer />

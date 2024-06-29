@@ -773,7 +773,7 @@ footer .logo-img {
   padding: 12px 0;
 }
 .dashboard .banner table tbody td {
-  padding: 12px 0;
+  padding: 15px 0;
 }
 @media (max-width: 1376px) {
   .dashboard .banner:first-child .firstBox .content div,

@@ -13,7 +13,13 @@ export const getPres = catchAsyncErros(async (req, res, next) => {
 
 export const getUserPres = catchAsyncErros(async (req, res, next) => {
     const { _id } = req.user;
-    const pres = await Pres.find({ patientId: _id });
+    const { id: appointment_date } = req.params;
+    const pres = await Pres.find({ patientId: _id, appointment_date });
+
+    if (pres.length === 0) {
+        return next(new ErrorHandler("No prescriptions found for this appointment date", 404));
+    }
+
     res.status(200).json({
         success: true,
         message: "Retrieved Prescription Data",
@@ -44,7 +50,6 @@ export const postPres = catchAsyncErros(async (req, res, next) => {
         days,
     } = req.body;
 
-    // Validate required fields
     if (
         !firstName ||
         !lastName ||
@@ -69,7 +74,6 @@ export const postPres = catchAsyncErros(async (req, res, next) => {
         return next(new ErrorHandler("Please fill in all fields", 400));
     }
 
-    // Create prescription data
     const presData = {
         firstName,
         lastName,
@@ -92,10 +96,7 @@ export const postPres = catchAsyncErros(async (req, res, next) => {
     };
 
     try {
-        // Save to database
         const pres = await Pres.create(presData);
-
-        // Send response
         res.status(201).json({
             success: true,
             data: pres,

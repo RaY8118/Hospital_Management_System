@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.get('/getPres', isAdminAuthenticated, getPres);
 router.post('/postPres', isAdminAuthenticated, postPres);
-router.get('/getUserPres', isPatientAuthenticated, getUserPres);
+router.get('/getUserPres/:id', isPatientAuthenticated, getUserPres);
 
 export default router;
