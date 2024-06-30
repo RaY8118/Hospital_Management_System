@@ -103,7 +103,7 @@ const Pres = () => {
               ) : (
                 <tr>
                   <td colSpan="10" style={{ textAlign: "center" }}>
-                    No Appointments Found!
+                    No Prescription Uploaded for this Appointment !
                   </td>
                 </tr>
               )}

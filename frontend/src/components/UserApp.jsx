@@ -70,14 +70,20 @@ export const UserApp = () => {
                       </div>
                     </td>
                     <td>
-                      <Link
-                        to={`/prescriptions/${appointment.appointment_date.substring(
-                          0,
-                          16
-                        )}`}
-                      >
-                        Click here to see ur prescriptions
-                      </Link>
+                      {appointment.status === "Done" ? (
+                        <Link
+                          to={`/prescriptions/${appointment.appointment_date.substring(
+                            0,
+                            16
+                          )}`}
+                        >
+                          Click here to see your prescriptions
+                        </Link>
+                      ) : (
+                        <span className="disabled-link">
+                          Prescriptions available after appointment is done
+                        </span>
+                      )}
                     </td>
                   </tr>
                 ))

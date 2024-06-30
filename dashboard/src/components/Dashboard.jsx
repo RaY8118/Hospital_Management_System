@@ -123,6 +123,8 @@ const Dashboard = () => {
                             ? "value-pending"
                             : appointment.status === "Accepted"
                             ? "value-accepted"
+                            : appointment.status === "Done"
+                            ? "value-accepted"
                             : "value-rejected"
                         }
                         value={appointment.status}
@@ -138,6 +140,9 @@ const Dashboard = () => {
                         </option>
                         <option value="Rejected" className="value-rejected">
                           Rejected
+                        </option>
+                        <option value="Done" className="value-accepted">
+                          Done
                         </option>
                       </select>
                     </td>

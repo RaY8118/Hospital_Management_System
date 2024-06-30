@@ -99,6 +99,7 @@ export const postPres = catchAsyncErros(async (req, res, next) => {
         const pres = await Pres.create(presData);
         res.status(201).json({
             success: true,
+            message: "Uploaded Prescription Successfully",
             data: pres,
         });
     } catch (error) {
