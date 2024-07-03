@@ -27,7 +27,7 @@ const Login = () => {
       setIsAuthenticated(true);
       navigateTo("/");
     } catch (error) {
-      toast.error(error.response.data.message)
+      toast.error(error.response.data.message);
     }
   };
 
@@ -38,10 +38,6 @@ const Login = () => {
     <div className="container form-component login-form">
       <h2>Sign in</h2>
       <p>Please Login to countinue</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, in odio!
-        Enim, dolores. Nulla, est!
-      </p>
       <form onSubmit={handleLogin}>
         <input
           type="text"

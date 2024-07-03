@@ -4,6 +4,11 @@ import { Pres } from "../models/presSchema.js";
 
 export const getPres = catchAsyncErros(async (req, res, next) => {
     const pres = await Pres.find({});
+
+    if (pres.length === 0) {
+        return next(new ErrorHandler("No prescriptions found ", 404));
+    }
+
     res.status(200).json({
         success: true,
         message: "Retrieved Prescription Data",

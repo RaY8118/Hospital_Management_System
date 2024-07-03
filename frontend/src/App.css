@@ -7,7 +7,7 @@
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: #e5e5e5;
+  background: #61b4d7;
 }
 .btn {
   padding: 7px 20px;
@@ -17,8 +17,8 @@ body {
   letter-spacing: 2px;
 }
 .white-btn {
-  background: #fff;
-  color: #111;
+  background: #5b1212b9;
+  color: #188a42;
 }
 .purple-btn {
   background: #9083d5;
@@ -154,18 +154,18 @@ h6 {
   padding-bottom: 60px;
 }
 .form-component h2 {
-  color: gray;
+  color: white;
   letter-spacing: 4px;
   margin-bottom: 30px;
 }
 .form-component h4 {
-  color: gray;
+  color: red;
   font-weight: 700;
   margin-bottom: 20px;
 }
 .form-component p {
   max-width: 750px;
-  color: gray;
+  color: black;
   margin-bottom: 20px;
 }
 .form-component form {
@@ -184,7 +184,7 @@ h6 {
   font-size: 24px;
   padding: 10px 10px 10px 40px;
   border-radius: 7px;
-  border: 1px solid gray;
+  border: 2px solid black;
 }
 .form-component button {
   padding: 10px 35px;
@@ -250,6 +250,7 @@ h6 {
   .form-component form textarea {
     font-size: 20px;
     padding: 10px;
+    border: 2px solid black;
   }
 }
 .biography {
@@ -331,7 +332,7 @@ footer .content div ul {
   gap: 10px;
 }
 footer .content div ul a {
-  color: gray;
+  color: black;
   text-decoration: none;
 }
 footer .content div ul a:hover {
@@ -339,7 +340,7 @@ footer .content div ul a:hover {
   transition: 0.3s;
 }
 footer .content div ul li span {
-  color: gray;
+  color: black;
 }
 footer .content div ul li span:first-child {
   width: 150px;
@@ -388,8 +389,9 @@ footer .content div:last-child div svg {
   padding-bottom: 50px;
 }
 .departments h2 {
-  color: gray;
+  color: white;
   margin-bottom: 30px;
+  margin-left: 15px;
 }
 .card {
   position: relative;
@@ -404,7 +406,9 @@ footer .content div:last-child div svg {
   min-height: 360px;
   margin: 0 10px;
   text-decoration: none;
+  overflow: hidden; /* Ensure no content spills out */
 }
+
 .card img {
   position: absolute;
   width: 100%;
@@ -412,10 +416,13 @@ footer .content div:last-child div svg {
   z-index: 1;
   top: 0;
   left: 0;
+  object-fit: cover; /* Ensure image covers the card properly */
 }
+
 .card .depart-name {
+  z-index: 2; /* Ensure the text appears above the image */
   margin-bottom: 30px;
-  background: #e5e5e5;
+  background: rgba(229, 229, 229, 0.8); /* Slightly transparent background */
   width: 320px;
   font-size: 24px;
   text-transform: uppercase;
@@ -423,9 +430,9 @@ footer .content div:last-child div svg {
   justify-content: center;
   padding: 12px;
   border-radius: 30px;
-  left: 0;
   height: fit-content;
   font-weight: 700;
+  position: relative; /* Ensure the z-index works properly */
 }
 
 /**********************************************************************************************************************/
@@ -587,11 +594,11 @@ input[type="time"]:before {
 footer .logo-img {
   width: 100%;
 }
-.card {
-  padding: 2em;
+.cards {
+  padding: 1.5em;
   border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 6px 4px 8px black;
   background-color: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -600,27 +607,31 @@ footer .logo-img {
   text-align: left;
 }
 
-.card:hover {
+.cards:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px black;
 }
 
-.card p {
-  margin: 0.5em 0;
+.cards p {
+  margin: 0.3em 0;
 }
 
 .grid {
   max-width: 120rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding-top: 100px;
-  padding-bottom: 40px;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  gap: 3rem;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  padding-left: 3rem;
+  padding-right: 3rem;
   margin: 0 auto;
-  background-color: #e5e5e5;
+  background-color: #61b4d7;
   text-align: left;
+  position: relative;
+  background-image: url("/Vector.png");
+  background-position: right top;
+  background-repeat: no-repeat;
 }
 
 .inner-grid {

@@ -90,42 +90,6 @@ export const logoutPatient = catchAsyncErros(async (req, res, next) => {
     })
 })
 
-// export const addNewDoctor = catchAsyncErros(async (req, res, next) => {
-//     if (!req.files || Object.keys(req.files).length === 0) {
-//         return next(new ErrorHandler("Doctor Avatar required!", 400))
-//     }
-//     const { docAvatar } = req.files;
-//     const allowedFormats = ["image/png", "image/jpeg", "image/webp"];
-//     if (!allowedFormats.includes(docAvatar.mimetype)) {
-//         return next(new ErrorHandler("File format not supported!", 400));
-//     }
-//     const { firstName, lastName, email, phone, password, gender, dob, ano, doctorDepartment } = req.body;
-//     if (!firstName || !lastName || !email || !phone || !password || !gender || !dob || !ano || !doctorDepartment ||
-//         !docAvatar) {
-//         return next(new ErrorHandler("please provide full details!", 400))
-//     }
-//     const isRegistered = await User.findOne({ email });
-//     if (isRegistered) {
-//         return next(new ErrorHandler(`${isRegistered.role} already registered with this email`, 400));
-//     }
-//     const cloudinaryResponse = await cloudinary.uploader.upload(
-//         docAvatar.tempFilePath
-//     );
-//     if (!cloudinaryResponse || cloudinaryResponse.error) {
-//         console.log("Cloudinary Error:", cloudinaryResponse.error || "unknown Cloudinary Error");
-//     }
-//     const doctor = await User.create({
-//         firstName, lastName, email, phone, password, gender, dob, ano, doctorDepartment, role: "Doctor", docAvatar: {
-//             url: cloudinaryResponse.secure_url,
-//             public_id: cloudinaryResponse.public_id
-//         }
-//     });
-//     res.status(200), json({
-//         success: true,
-//         message: "New Doctor registered",
-//         doctor
-//     })
-// })
 
 export const addNewDoctor = catchAsyncErros(async (req, res, next) => {
     if (!req.files || Object.keys(req.files).length === 0) {

@@ -1,20 +1,28 @@
-import React from 'react'
+import React from "react";
 
 const Hero = ({ title, imageUrl }) => {
-    return (
-        <div className="hero container">
-            <div className=" banner">
-                <h1>{title}</h1>
-                <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi eius esse modi qui commodi veritatis saepe animi in tempora! Libero rem in temporibus inventore iste!</p>
-            </div>
-            <div className="banner">
-                <img src={imageUrl} alt="hero" className='animated-image' />
-                <span>
-                    <img src="/Vector.png" alt="vector" />
-                </span>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="hero container">
+      <div className=" banner">
+        <h1>{title}</h1>
+        <p>
+          {" "}
+          Welcome to City Hospital!, your premier solution for streamlined
+          healthcare administration.At our hospital, we believe in leveraging
+          cutting-edge technology to simplify complex processes. Our
+          comprehensive suite of features includes robust patient management,
+          seamless appointment scheduling, integrated billing and invoicing,
+          inventory management, and insightful analytics.{" "}
+        </p>
+      </div>
+      <div className="banner">
+        <img src={imageUrl} alt="hero" className="animated-image" />
+        <span>
+          <img src="/Vector.png" alt="vector" />
+        </span>
+      </div>
+    </div>
+  );
+};
 
-export default Hero
+export default Hero;
