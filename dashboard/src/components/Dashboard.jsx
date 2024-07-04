@@ -79,11 +79,6 @@ const Dashboard = () => {
                 <p>Hello ,</p>
                 <h5>{user && `${user.firstName} ${user.lastName}`} </h5>
               </div>
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Facilis, nam molestias. Eaque molestiae ipsam commodi neque.
-                Assumenda repellendus necessitatibus itaque.
-              </p>
             </div>
           </div>
           <div className="secondBox">
