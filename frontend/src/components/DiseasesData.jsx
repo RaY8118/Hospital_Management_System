@@ -9,7 +9,7 @@ const DiseasesData = () => {
         const response = await axios.get(
           "http://localhost:4000/api/v1/disease/diseases"
         );
-        console.log(response.data.diseases);
+        console.log(response.data);
         setData(response.data.diseases);
       } catch (error) {
         console.error("Error fetching diseases:", error);
@@ -18,29 +18,29 @@ const DiseasesData = () => {
         }
       }
     };
-
     fetchDiseases();
   }, []);
   return (
-    <>
-      <div className="grid">
-        {data.map((post) => {
-          const { _id, name, def, symptoms } = post;
-          return (
-            <div className="cards" key={_id}>
-              <p style={{ textDecoration: "none" }}>
-                <b>{name}:</b> {def}{" "}
-              </p>
-              <br />
-              <p>
-                <b>Symptoms:</b> 1){symptoms[0]}, 2){symptoms[1]}, 3)
-                {symptoms[2]}, 4){symptoms[3]}{" "}
-              </p>
+    <div className="grid">
+      {data.map((post) => {
+        const { _id, name, def, symptoms, url } = post;
+        return (
+          <div className="cards" key={_id}>
+            <h2>{name}</h2>
+            <p>{def}</p>
+            <img src={`/images/${url}`} alt={name} />
+            <div>
+              <h3>Symptoms</h3>
+              <ul>
+                {symptoms.map((symptom, index) => (
+                  <li key={index}>{symptom}</li>
+                ))}
+              </ul>
             </div>
-          );
-        })}
-      </div>
-    </>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

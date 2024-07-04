@@ -1,8 +1,5 @@
 node_modules
 /backend/config/config.env
 data.json
-MERN_STACK_HOSPITAL_MANAGEMENT_SYSTEM.appointments.json
 MERN_STACK_HOSPITAL_MANAGEMENT_SYSTEM.diseases.json
-MERN_STACK_HOSPITAL_MANAGEMENT_SYSTEM.messages.json
-MERN_STACK_HOSPITAL_MANAGEMENT_SYSTEM.users.json
-frontend1
+database
