@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Diseases from "./pages/Diseases.jsx";
 import Footer from "./components/Footer.jsx";
+import Doctors from "./components/Doctors.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Context } from "./main.jsx";
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/disease" element={<Diseases />} />
           <Route path="/userapp" element={<UserAppoinments />} />
           <Route path="/prescriptions/:date" element={<Prescription />} />
+          <Route path="/doctors" element={<Doctors />} />
         </Routes>
         <ToastContainer position="top-center" />
         <Footer />

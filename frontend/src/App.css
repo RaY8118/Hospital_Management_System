@@ -843,16 +843,20 @@ footer .logo-img {
   }
 }
 .doctors h1 {
-  color: #3939d9f2;
+  color: black;
   margin-bottom: 30px;
   font-size: 2.3rem;
+  margin-top: 75px;
+  margin-left: 30px;
 }
 .doctors .banner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   grid-gap: 20px;
+  padding-bottom: 25px;
+  margin: 25px;
 }
-.doctors .banner .card {
+.doctors .banner .Card {
   background: #fff;
   border-radius: 12px;
   padding: 20px;
@@ -860,27 +864,59 @@ footer .logo-img {
   flex-direction: column;
   align-items: center;
 }
-.doctors .banner .card img {
+.doctors .banner .Card img {
   width: 270px;
   height: 270px;
   border-radius: 100%;
   margin-bottom: 20px;
 }
-.doctors .banner .card h4 {
+.doctors .banner .Card h4 {
   font-size: 24px;
   color: #333;
   margin-bottom: 20px;
 }
-.doctors .banner .card div {
+.doctors .banner .Card div {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;
   font-size: 20px;
 }
-.doctors .banner .card div p {
+.doctors .banner .Card div p {
   font-weight: 700;
 }
-.doctors .banner .card div p span {
+.doctors .banner .Card div p span {
   font-weight: 500;
+}
+
+@media (max-width: 350px) {
+  .doctors .banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    grid-gap: 20px;
+  }
+}
+.link-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.link-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.link-button:active {
+  background-color: #004085;
+  transform: scale(1);
 }
