@@ -272,6 +272,7 @@ const PresForm = () => {
             </form>
           </div>
         </div>
+        <Link to={"/allpres"}>Click here</Link>
       </section>
     </>
   );
