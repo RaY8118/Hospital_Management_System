@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const DiseasesData = () => {
   const [data, setData] = useState([]);
@@ -23,7 +24,7 @@ const DiseasesData = () => {
   return (
     <div className="grid">
       {data.map((post) => {
-        const { _id, name, def, symptoms, url } = post;
+        const { _id, name, def, symptoms, url, info } = post;
         return (
           <div className="cards" key={_id}>
             <h2>{name}</h2>
@@ -36,6 +37,12 @@ const DiseasesData = () => {
                   <li key={index}>{symptom}</li>
                 ))}
               </ul>
+              <h3>
+                Want to know more <br></br>
+                <Link to={info} target="_blank" rel="noopener noreferrer">
+                  Click here
+                </Link>
+              </h3>
             </div>
           </div>
         );
