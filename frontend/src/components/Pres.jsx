@@ -9,7 +9,7 @@ const Pres = () => {
     const getUserPres = async () => {
       try {
         const data = await axios.get(
-          `http://localhost:4000/api/v1/pres/getUserPres/${date}`,
+          `${import.meta.env.VITE_API_URL}/api/v1/pres/getUserPres/${date}`,
           { withCredentials: true }
         );
         setPres(data.data.pres);

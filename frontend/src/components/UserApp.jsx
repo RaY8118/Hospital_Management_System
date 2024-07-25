@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../main";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
-import { toast } from "react-toastify";
 
 export const UserApp = () => {
   const [appointments, setAppointments] = useState([]);
@@ -11,7 +10,7 @@ export const UserApp = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/getuserApp",
+          `${import.meta.env.VITE_API_URL}/api/v1/appointment/getuserApp`,
           { withCredentials: true }
         );
         setAppointments(data.appointments);

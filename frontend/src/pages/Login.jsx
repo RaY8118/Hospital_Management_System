@@ -15,8 +15,9 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
+      const URL = "http://localhost:4000"
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        `${URL}/api/v1/user/login`,
         { email, password, confirmPassword, role: "Patient" },
         {
           withCredentials: true,
