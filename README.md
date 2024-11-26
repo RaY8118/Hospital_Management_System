@@ -79,6 +79,46 @@ This project is licensed under the MIT License - see the LICENSE file for detail
    ```
 4. Access the web application at `http://localhost:5174`.
 
+## 📦 Containerization
+
+The project has been containerized using Docker to simplify deployment and eliminate dependency issues. Follow the steps below to build and run the application using Docker.
+
+### Prerequisites
+Ensure Docker and Docker Compose are installed on your system.  
+- [Install Docker](https://docs.docker.com/get-docker/)
+- [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+### Build and Run the Containers
+
+1. Navigate to the root directory of the project (where the `docker-compose.yml` file is located):
+   ```bash
+   cd <project-root>
+   ```
+
+2. Build the Docker images:
+   ```bash
+   docker-compose build
+   ```
+
+3. Start the containers:
+   ```bash
+   docker-compose up
+   ```
+
+4. Access the application:
+   - Backend API: `http://localhost:4000`
+   - Frontend: `http://localhost:3000`
+   - Dashboard: `http://localhost:3001`
+
+### Stopping the Containers
+To stop the running containers, use:
+```bash
+docker-compose down
+```
+
+### Customization
+- You can modify the exposed ports or environment variables in the `docker-compose.yml` file as needed.
+- The `Dockerfile` in each service directory defines the build process for that service.
 ## 🌟 Acknowledgments
 
 - Inspired by the need for efficient hospital management solutions.
