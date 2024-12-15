@@ -3,3 +3,4 @@ node_modules
 data.json
 MERN_STACK_HOSPITAL_MANAGEMENT_SYSTEM.diseases.json
 database
+.idea/
