@@ -11,7 +11,7 @@ const Prescriptions = () => {
     const fetchPrescriptions = async () => {
       try {
         const data = await axios.get(
-          "http://localhost:4000/api/v1/pres/getPres",
+          `${import.meta.env.VITE_API_URL}/api/v1/pres/getPres`,
           { withCredentials: true }
         );
         setPrescriptions(data.data.pres);

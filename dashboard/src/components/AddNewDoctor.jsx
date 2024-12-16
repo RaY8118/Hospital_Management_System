@@ -59,7 +59,7 @@ const AddNewDoctor = () => {
       formData.append("dob", dob);
 
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/doctor/addnew",
+        `${import.meta.env.VITE_API_URL}/api/v1/user/doctor/addnew`,
         formData,
         {
           withCredentials: true,

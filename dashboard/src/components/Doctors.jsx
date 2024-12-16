@@ -11,7 +11,7 @@ const Doctors = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/doctors",
+          `${import.meta.env.VITE_API_URL}/api/v1/user/doctors`,
           {
             withCredentials: true,
           }

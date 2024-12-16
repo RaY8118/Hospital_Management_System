@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const PresForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -36,12 +36,11 @@ const PresForm = () => {
   ];
 
   const [pres, setPres] = useState([]);
-  const navigateTo = useNavigate();
   useEffect(() => {
     const getPres = async () => {
       try {
         const data = await axios.get(
-          "http://localhost:4000/api/v1/pres/getPres",
+          `${import.meta.env.VITE_API_URL}/api/v1/pres/getPres`,
           { withCredentials: true }
         );
         setPres(data.data.pres);
@@ -58,7 +57,7 @@ const PresForm = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/doctors",
+        `${import.meta.env.VITE_API_URL}/api/v1/user/doctors`,
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -71,7 +70,7 @@ const PresForm = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/pres/postPres",
+        `${import.meta.env.VITE_API_URL}/api/v1/pres/postPres`,
         {
           firstName,
           lastName,
