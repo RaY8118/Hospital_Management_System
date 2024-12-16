@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.URL}/api/v1/user/patient/register`,
+        `${import.meta.env.VITE_API_URL}/api/v1/user/patient/register`,
         {
           firstName,
           lastName,
